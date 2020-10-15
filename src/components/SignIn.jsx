@@ -15,7 +15,8 @@ export default function SignIn() {
     }
   };
 
-  const emailSignIn = (email, password) => {
+  const emailSignIn = (event) => {
+    event.preventDefault();
     const provider = new firebase.auth.EmailAuthProvider();
     // firebase.auth().createUserWithEmailAndPassword(email, password);
     firebase.auth().signInWithEmailAndPassword(email, password);
@@ -38,8 +39,10 @@ export default function SignIn() {
           onChange={handleChange}
           value={password}
         />
+        <button type="submit" onClick={emailSignIn}>
+          Bonsoir
+        </button>
       </form>
-      <button onClick={() => emailSignIn(email, password)}>Bonsoir</button>
     </div>
   );
 }
