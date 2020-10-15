@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-// import "./App.css";
+import "./App.css";
 
-import firebase, { firestore } from "firebase/app";
+import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
@@ -9,6 +9,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import SignIn from "./components/SignIn";
 import SignOut from "./components/SignOut";
+import ChatRoom from "./components/ChatRoom";
 
 firebase.initializeApp({
   apiKey: "AIzaSyC7b22llokG_iTeCr9ciAHxJLwcqyKTNmU",
@@ -21,7 +22,7 @@ firebase.initializeApp({
 });
 
 const auth = firebase.auth();
-// const firestore = firebase.firestore();
+const firestore = firebase.firestore();
 
 function App() {
   const [user, setUser] = useState(null);
@@ -34,8 +35,7 @@ function App() {
       <header className="App-header">
         <SignOut user={user} />
       </header>
-      <SignIn />
-      {/* <section>{user ? <ChatRoom /> : <SignIn />}</section> */}
+      <section>{user ? <ChatRoom /> : <SignIn />}</section>
     </div>
   );
 }
