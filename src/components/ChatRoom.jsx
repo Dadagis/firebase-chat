@@ -14,7 +14,6 @@ export default function ChatRoom() {
   const query = messagesRef.orderBy("createdAt").limit(25);
   const [messageValue, setMessageValue] = useState("");
   const [messages] = useCollectionData(query, { idField: "id" });
-  console.log(useCollectionData(query, { idField: "id" }));
 
   const sendMessage = async (e) => {
     e.preventDefault();
