@@ -156,6 +156,13 @@ img {
 
 .message {
   width: fit-content;
+  position: relative;
+}
+
+.message > .username {
+  position: absolute;
+  top: -0.35rem;
+  color: white;
 }
 
 .received {

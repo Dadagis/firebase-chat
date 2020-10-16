@@ -7,13 +7,14 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import ChatMessage from "./ChatMessage";
 
-export default function ChatRoom() {
+export default function ChatRoom(props) {
   const firestore = firebase.firestore();
 
   const messagesRef = firestore.collection("messages");
   const query = messagesRef.orderBy("createdAt").limit(25);
   const [messageValue, setMessageValue] = useState("");
   const [messages] = useCollectionData(query, { idField: "id" });
+  const { user } = props;
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -35,7 +36,7 @@ export default function ChatRoom() {
       <div className="messages-area">
         {messages &&
           messages.map((message) => (
-            <ChatMessage key={message.id} message={message} />
+            <ChatMessage key={message.id} message={message} user={user} />
           ))}
       </div>
       <form onSubmit={sendMessage}>

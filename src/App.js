@@ -35,7 +35,7 @@ function App() {
       <header className="App-header">
         <SignOut user={user} />
       </header>
-      <section>{user ? <ChatRoom /> : <SignIn />}</section>
+      <section>{user ? <ChatRoom user={user} /> : <SignIn />}</section>
     </div>
   );
 }
