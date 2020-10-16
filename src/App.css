@@ -147,3 +147,21 @@ img {
   border-radius: 50%;
   margin: 2px 5px;
 }
+
+.messages-area {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 2rem;
+}
+
+.message {
+  width: fit-content;
+}
+
+.received {
+  align-self: flex-start;
+}
+
+.sent {
+  align-self: flex-end;
+}

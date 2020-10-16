@@ -10,7 +10,7 @@ export default function ChatMessage(props) {
     uid === firebase.auth().currentUser.uid ? "sent" : "received";
 
   return (
-    <div className={messageClassName}>
+    <div className={`${messageClassName} message`}>
       <p>{text}</p>
     </div>
   );

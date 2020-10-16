@@ -32,12 +32,12 @@ export default function ChatRoom() {
 
   return (
     <div>
-      <p>ChatRoom</p>
-      {messages &&
-        messages.map((message) => (
-          <ChatMessage key={message.id} message={message} />
-        ))}
-
+      <div className="messages-area">
+        {messages &&
+          messages.map((message) => (
+            <ChatMessage key={message.id} message={message} />
+          ))}
+      </div>
       <form onSubmit={sendMessage}>
         <input
           type="text"
