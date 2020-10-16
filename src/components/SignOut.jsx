@@ -7,6 +7,8 @@ export default function SignOut(props) {
   const { user } = props;
 
   return (
-    user && <button onClick={() => firebase.auth().signOut()}>SignOut</button>
+    user && (
+      <button onClick={() => firebase.auth().signOut()}>Se déconnecter</button>
+    )
   );
 }

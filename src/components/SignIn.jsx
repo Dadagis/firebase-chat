@@ -15,6 +15,13 @@ export default function SignIn(props) {
     }
   };
 
+  const googleSignIn = (event) => {
+    event.preventDefault();
+
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider);
+  };
+
   const emailSignIn = (event) => {
     event.preventDefault();
     const provider = new firebase.auth.EmailAuthProvider();
@@ -54,6 +61,9 @@ export default function SignIn(props) {
           </button>
         </div>
       </form>
+      <button onClick={googleSignIn} className="google-button">
+        S'inscrire avec <strong>Google</strong>
+      </button>
     </div>
   );
 }
