@@ -3,7 +3,7 @@ import firebase, { firestore } from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-export default function SignIn() {
+export default function SignIn(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,13 +18,18 @@ export default function SignIn() {
   const emailSignIn = (event) => {
     event.preventDefault();
     const provider = new firebase.auth.EmailAuthProvider();
-    // firebase.auth().createUserWithEmailAndPassword(email, password);
     firebase.auth().signInWithEmailAndPassword(email, password);
+  };
+
+  const emailSignUp = (event) => {
+    event.preventDefault();
+    const provider = new firebase.auth.EmailAuthProvider();
+    firebase.auth().createUserWithEmailAndPassword(email, password);
   };
 
   return (
     <div>
-      <form>
+      <form className="sign-form">
         <input
           type="email"
           placeholder="Email"
@@ -39,9 +44,15 @@ export default function SignIn() {
           onChange={handleChange}
           value={password}
         />
-        <button type="submit" onClick={emailSignIn}>
-          Bonsoir
-        </button>
+        <div className="buttons-div">
+          <button type="submit" onClick={emailSignIn} className="sign-button">
+            Se connecter
+          </button>
+          <span>Ou</span>
+          <button type="submit" onClick={emailSignUp} className="sign-button">
+            Créer un compte
+          </button>
+        </div>
       </form>
     </div>
   );

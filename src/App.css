@@ -172,3 +172,41 @@ img {
 .sent {
   align-self: flex-end;
 }
+
+.sign-form {
+  bottom: 0;
+  background-color: transparent;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  position: relative;
+  margin: auto;
+}
+
+.sign-form > input {
+  line-height: 1.5;
+  width: 80%;
+  font-size: 1.5rem;
+  background: rgb(175, 171, 171);
+  color: white;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+  margin: 0.5rem 0;
+}
+
+.buttons-div {
+  display: flex;
+  justify-content: center;
+  color: white;
+  align-items: center;
+}
+
+.sign-button {
+  font-size: medium;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: fit-content;
+}
