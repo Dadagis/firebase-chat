@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ea38d94c7f985ec095ea37482d032611",
+    "revision": "7012b9fc14d5992589cbf6d1ef1b73dd",
     "url": "/firebase-chat/index.html"
   },
   {
